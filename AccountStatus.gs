@@ -13,5 +13,8 @@ function amountIOL(moneda) {
   }
   const response = UrlFetchApp.fetch(url, options)
   const json = JSON.parse(response.getContentText())
+  if(json.cuentas == undefined) {
+    return json.message
+  }
   return moneda == 'PESOS'?json.cuentas[0].total:json.cuentas[1].total
 }
