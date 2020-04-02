@@ -14,4 +14,4 @@ Hay que crear los 2 scripts en el archivo donde se quiere utilizar la fórmula c
 para que pueda hacer request a la api de IOL. Por defecto no tiene el permiso para consultar APIs.
 
 Luego de esto en cualquier celda de la hoja de cálculo con la que relacionaron el proyecto escriben `=amountIOL` y van a ver la ayuda de como se usa. 
-![amountIOLfunction|https://i.imgur.com/qygbPf5.png]
+![amountIOLfunction](https://i.imgur.com/qygbPf5.png)
