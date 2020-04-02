@@ -3,7 +3,7 @@ Funciones de Google Script para consumir la [API de Invertir Online](https://api
 
 Por ahora permite autenticarse [Login.gs](../master/Login.gs) y acceder al estado de cuenta [AccountStatus.gs](../master/AccountStatus.gs)
 
-Todo lo que se necesitar para usarse es reemplazar usuario y contraseña en la línea 9 de [Login.gs](../master/Login.gs)
+Todo lo que se necesita para usarse es reemplazar usuario y contraseña en la línea 9 de [Login.gs](../master/Login.gs)
 
 const payload = 'username=yourusername&password=yourpassword&grant_type=password';
 
