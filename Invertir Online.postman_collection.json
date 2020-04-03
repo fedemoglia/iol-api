@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "14358fc3-8054-4c96-800f-9953ed2c3ec3",
+		"name": "Invertir Online",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3ed1737-9c2a-4d30-9de1-e5204376991d",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"const token = jsonData.access_token;",
+							"pm.globals.set(\"access_token\", token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "yourUsername",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "yourPassword",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.invertironline.com/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"invertironline",
+						"com"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Estado cuenta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "yourUsername",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "yourPassword",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.invertironline.com/api/v2/estadocuenta",
+					"protocol": "https",
+					"host": [
+						"api",
+						"invertironline",
+						"com"
+					],
+					"path": [
+						"api",
+						"v2",
+						"estadocuenta"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
